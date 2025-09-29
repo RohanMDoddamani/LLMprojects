@@ -5,6 +5,17 @@ from peft import LoraConfig, get_peft_model, TaskType, PeftModel
 from transformers import DataCollatorForLanguageModeling, Trainer
 
 # 1. Load dataset
+
+newData = [
+  {"instruction": "Who did Alice meet in the forest?", 
+   "input": "", 
+   "output": "Alice met a rabbit in the forest."},
+
+  {"instruction": "Where did Alice go after meeting the rabbit?", 
+   "input": "", 
+   "output": "She went deeper into the forest."}
+]
+
 dataset = load_dataset("json", data_files="data.json")
 
 # 2. Choose a base model (small for demo)
